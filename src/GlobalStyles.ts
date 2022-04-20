@@ -9,8 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${(props) => props.theme.textColor};
-    background-color: ${(props) => props.theme.bgColor.BODY};
     height: 100%;
     overflow: hidden;
     margin: 0;
