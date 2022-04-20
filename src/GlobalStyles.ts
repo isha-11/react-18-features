@@ -3,8 +3,11 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   html {
     font-family: system-ui;
-    box-sizing: border-box;
     height: 100%;
+
+    * {
+      box-sizing: border-box;
+    }
   }
 
   body {
