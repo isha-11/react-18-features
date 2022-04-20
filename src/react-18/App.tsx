@@ -1,5 +1,5 @@
-import { Transition } from './features/react-18/transition';
-import { GlobalStyle } from './GlobalStyles';
+import { Transition } from './transition';
+import { GlobalStyle } from '../GlobalStyles';
 
 export const App = () => {
   return (
