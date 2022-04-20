@@ -5,12 +5,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: system-ui;
     box-sizing: border-box;
     height: 100%;
-    overflow: hidden;
   }
 
   body {
     height: 100%;
-    overflow: hidden;
     margin: 0;
   }
 
