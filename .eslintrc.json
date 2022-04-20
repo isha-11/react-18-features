@@ -1,0 +1,9 @@
+{
+  "extends": ["eslint:recommended", "react-app", "react-app/jest", "prettier"],
+  "rules": {
+    "react/prop-types": "off",
+    "no-var": "error",
+    "prefer-const": "error",
+    "testing-library/prefer-screen-queries": "off"
+  }
+}
