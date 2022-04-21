@@ -16,7 +16,7 @@ export const Transition = () => {
     if (searchQuery === '') {
       setSearchResult(EMPTY_RESULT);
     } else {
-      const rows = Array.from({ length: 2000 }, (_, i) => {
+      const rows = Array.from({ length: 5000 }, (_, i) => {
         return (
           <Card key={i}>
             <img
