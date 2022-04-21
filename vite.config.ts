@@ -19,9 +19,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: getHTMLPath('main.html'),
-        react17: getHTMLPath('react-17.html'),
-        react18: getHTMLPath('react-18.html'),
+        index: getHTMLPath('index.html'),
+        react17: getHTMLPath('./pages/react-17.html'),
+        react18: getHTMLPath('./pages/react-18.html'),
       },
     },
   },
