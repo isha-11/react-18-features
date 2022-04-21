@@ -2,6 +2,8 @@ import { Transition } from './transition';
 import { GlobalStyle } from '../GlobalStyles';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { routes } from '../constants';
+import { Batching } from './batching';
+import { DeferredValue } from './deferred-value';
 
 export const App = () => {
   console.log('react18 app');
@@ -11,8 +13,9 @@ export const App = () => {
       <main className='App'>
         <HashRouter>
           <Routes>
-            <Route path={'/transition'} element={<Transition />} />
-            <Route path={'/new'} element={<div>new</div>} />
+            <Route path={routes.transition} element={<Transition />} />
+            <Route path={routes.batching} element={<Batching />} />
+            <Route path={routes.deferredValue} element={<DeferredValue />} />
           </Routes>
         </HashRouter>
       </main>
