@@ -2,36 +2,36 @@ import { useEffect, useState } from 'react';
 import { Box, FlexBox } from 'react-styled-flex';
 
 export const Batching = () => {
-  const [bool, setBool] = useState(true);
-  const [num, setNum] = useState(0);
+  const [boolean, setBoolean] = useState(true);
+  const [number, setNumber] = useState(0);
   const [date, setDate] = useState(() => new Date().toString());
-  const [ele, setEle] = useState<JSX.Element[]>([]);
+  const [elements, setElements] = useState<JSX.Element[]>([]);
 
   const handleButtonClick = () => {
     setTimeout(() => {
-      setBool(!bool);
-      setNum(num + 1);
+      setBoolean(!boolean);
+      setNumber(number + 1);
       setDate(new Date().toString());
     }, 0);
   };
 
   useEffect(() => {
-    setEle([
-      ...ele,
+    setElements((prevElements) => [
+      ...prevElements,
       <Card
-        key={`${date}_${num}_${bool}`}
-        boolean={bool}
-        number={num}
+        key={`${date}_${number}_${boolean}`}
+        boolean={boolean}
+        number={number}
         date={date}
       />,
     ]);
-  }, [bool, num, date]);
+  }, [boolean, number, date]);
 
   return (
     <>
       <button onClick={handleButtonClick}>Click</button>
       <FlexBox column gap={'1rem'}>
-        {ele}
+        {elements}
       </FlexBox>
     </>
   );
