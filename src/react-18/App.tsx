@@ -1,8 +1,8 @@
 import { GlobalStyle } from '../GlobalStyles';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { routes } from '../constants';
-import { Transition } from './transition';
-import { Batching } from './batching';
+import { Transition } from './Transition';
+import { Batching } from './Batching';
 import { DeferredValue } from './DeferredValue';
 
 export const App = () => {
