@@ -1,26 +1,20 @@
 import { GlobalStyle } from './GlobalStyles';
 import { routes } from './constants';
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useParams,
-} from 'react-router-dom';
+import { HashRouter, Link, Route, Routes, useParams } from 'react-router-dom';
 import { Box, FlexBox } from 'react-styled-flex';
 
 export const App = () => {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter basename='/react-18-features/'>
+      <HashRouter>
         <Box as={'main'} height={'100%'}>
           <Routes>
             <Route path='/' element={<Index />}></Route>
             <Route path='/:path' element={<Demo />}></Route>
           </Routes>
         </Box>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };
