@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Box, FlexBox } from 'react-styled-flex';
 
 export const Batching = () => {
@@ -7,12 +8,24 @@ export const Batching = () => {
   const [date, setDate] = useState(() => new Date().toString());
   const [elements, setElements] = useState<JSX.Element[]>([]);
 
-  const handleButtonClick = () => {
+  const handleClick = () => {
+    setBoolean(!boolean);
+    setNumber(number + 1);
+    setDate(new Date().toString());
+  };
+
+  const handleTimeoutClick = () => {
     setTimeout(() => {
       setBoolean(!boolean);
       setNumber(number + 1);
       setDate(new Date().toString());
     }, 0);
+  };
+
+  const handleFlushSyncClick = () => {
+    flushSync(() => setBoolean(!boolean));
+    flushSync(() => setNumber(number + 1));
+    flushSync(() => setDate(new Date().toString()));
   };
 
   useEffect(() => {
@@ -29,7 +42,9 @@ export const Batching = () => {
 
   return (
     <>
-      <button onClick={handleButtonClick}>Click</button>
+      <button onClick={handleClick}>setState in Event handler</button>
+      <button onClick={handleTimeoutClick}>setState in setTimeout</button>
+      <button onClick={handleFlushSyncClick}>setState in flushSync</button>
       <FlexBox column gap={'1rem'}>
         {elements}
       </FlexBox>

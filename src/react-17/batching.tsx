@@ -7,7 +7,7 @@ export const Batching = () => {
   const [date, setDate] = useState(() => new Date().toString());
   const [elements, setElements] = useState<JSX.Element[]>([]);
 
-  const handleSyncClick = () => {
+  const handleClick = () => {
     setBoolean(!boolean);
     setNumber(number + 1);
     setDate(new Date().toString());
@@ -35,7 +35,7 @@ export const Batching = () => {
 
   return (
     <>
-      <button onClick={handleSyncClick}>setState in Event handler</button>
+      <button onClick={handleClick}>setState in Event handler</button>
       <button onClick={handleTimeoutClick}>setState in setTimeout</button>
       <FlexBox column gap={'1rem'}>
         {elements}
