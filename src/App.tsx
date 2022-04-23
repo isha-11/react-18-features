@@ -1,8 +1,8 @@
 import { GlobalStyle } from './GlobalStyles';
-import { routes } from './constants';
-import { HashRouter, Link, Route, Routes, useParams } from 'react-router-dom';
-import { Box, FlexBox } from 'react-styled-flex';
-import styled from 'styled-components';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { Box } from 'react-styled-flex';
+import { Index } from './main/Index';
+import { Demo } from './main/Demo';
 
 export const App = () => {
   return (
@@ -19,45 +19,3 @@ export const App = () => {
     </>
   );
 };
-
-const Index = () => (
-  <div className={'App'}>
-    <h1>React 18 features</h1>
-    <FlexBox gap={'1rem'} column>
-      <Feature to={routes.transition}>Transition</Feature>
-      <Feature to={routes.batching}>Automatic Batching</Feature>
-      <Feature to={routes.deferredValue}>Deferred Value</Feature>
-    </FlexBox>
-  </div>
-);
-
-const Demo = () => {
-  const { path } = useParams();
-
-  return (
-    <FlexBox center gap={'3rem'} height={'100%'}>
-      <iframe
-        title={'React 17'}
-        src={`/react-18-features/pages/react-17.html#/${path}`}
-        height={'80%'}
-      ></iframe>
-      <iframe
-        title={'React 18'}
-        src={`/react-18-features/pages/react-18.html#/${path}`}
-        height={'80%'}
-      ></iframe>
-    </FlexBox>
-  );
-};
-
-const Feature = styled(Link)`
-  display: block;
-  background-color: #61dafb;
-  color: #20232a;
-  text-decoration: none;
-  padding: 1rem;
-
-  &:hover {
-    background-color: #35b6d9;
-  }
-`;
