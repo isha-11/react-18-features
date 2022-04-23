@@ -14,15 +14,7 @@ export const DeferredValue = () => {
   return (
     <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
       <StyledInput type='text' value={query} onChange={handleChange} />
-      <div>
-        {isPending && (
-          <div>
-            <br />
-            <span>Loading...</span>
-          </div>
-        )}
-        {!isPending && <Result query={deferredQuery} />}
-      </div>
+      {isPending ? <div>Loading...</div> : <Result query={deferredQuery} />}
     </FlexBox>
   );
 };
