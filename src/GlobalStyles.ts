@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-family: system-ui;
     height: 100%;
-   
 
     * {
       box-sizing: border-box;
