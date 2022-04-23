@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Box, FlexBox } from 'react-styled-flex';
 import styled from 'styled-components';
-import { mapRoutes } from '../constants';
+import { mapRoutes } from '../routes';
 
 export const FeatureList = () => (
   <Box className={'App'} maxWidth={'60rem'} margin={'auto'}>

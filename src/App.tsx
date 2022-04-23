@@ -7,7 +7,7 @@ import { Demo } from './main/Demo';
 export const App = () => {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle root />
       <HashRouter>
         <Box as={'main'} height={'100%'}>
           <Routes>

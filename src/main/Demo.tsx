@@ -1,13 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { FlexBox, FlexItem } from 'react-styled-flex';
 import styled from 'styled-components';
+import { getTitleByRoute } from '../routes';
 
 export const Demo = () => {
   const { demoPath } = useParams();
 
   return (
     <FlexBox column height={'100%'} padding={'0 3rem 3rem 3rem'}>
-      <h1>Automatic batching</h1>
+      {demoPath ? <h1>{getTitleByRoute(`/${demoPath}`)}</h1> : null}
       <FlexItem box center flex={1} gap={'3rem'} height={'100%'}>
         <Frame
           title={'React 17'}
@@ -26,5 +27,5 @@ export const Demo = () => {
 
 const Frame = styled.iframe`
   flex: 1;
-  -border: none;
+  border: none;
 `;

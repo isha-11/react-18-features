@@ -1,9 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ root?: boolean }>`
   html {
     font-family: system-ui;
     height: 100%;
+    background-color: ${(props) => (props.root ? undefined : '#61dafb')};
 
     * {
       box-sizing: border-box;

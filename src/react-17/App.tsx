@@ -1,6 +1,6 @@
 import { GlobalStyle } from '../GlobalStyles';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { getRoute } from '../constants';
+import { getRoute } from '../routes';
 import { Transition } from './Transition';
 import { Batching } from './Batching';
 import { DeferredValue } from './DeferredValue';
