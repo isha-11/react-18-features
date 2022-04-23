@@ -53,7 +53,7 @@ const Card = styled(FlexBox).attrs({
   padding: '1rem',
   width: '100%',
 })`
-  background-color: #20232a;
+  background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.primary};
 `;
 

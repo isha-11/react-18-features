@@ -18,7 +18,7 @@ export const Table = styled.table`
 `;
 
 export const Button = styled.button`
-  background-color: #20232a;
+  background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.primary};
   border: none;
   outline: none;
