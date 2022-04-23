@@ -8,7 +8,9 @@ export const FeatureList = () => (
     <h1>React 18 features</h1>
     <FlexBox gap={'1rem'} column>
       {mapRoutes(({ route, title }) => (
-        <Feature to={route}>{title}</Feature>
+        <Feature key={route} to={route}>
+          {title}
+        </Feature>
       ))}
     </FlexBox>
   </Box>

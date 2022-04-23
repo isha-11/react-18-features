@@ -31,4 +31,10 @@ export const GlobalStyle = createGlobalStyle<{ root?: boolean }>`
   a {
     -webkit-tap-highlight-color: transparent; // https://stackoverflow.com/questions/45049873/how-to-remove-the-blue-highlight-of-button-on-mobile
   }
+
+  button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: system-ui;
+  }
 `;
