@@ -24,9 +24,9 @@ const Index = () => (
   <div className={'App'}>
     <h1>React 18 features</h1>
     <FlexBox gap={'1rem'} column>
-      <Concept to={routes.transition}>Transition</Concept>
-      <Concept to={routes.batching}>Automatic Batching</Concept>
-      <Concept to={routes.deferredValue}>Deferred Value</Concept>
+      <Feature to={routes.transition}>Transition</Feature>
+      <Feature to={routes.batching}>Automatic Batching</Feature>
+      <Feature to={routes.deferredValue}>Deferred Value</Feature>
     </FlexBox>
   </div>
 );
@@ -50,7 +50,7 @@ const Demo = () => {
   );
 };
 
-const Concept = styled(Link)`
+const Feature = styled(Link)`
   display: block;
   background-color: #61dafb;
   color: #20232a;
