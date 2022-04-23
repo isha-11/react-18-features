@@ -10,6 +10,7 @@ export const App = () => {
     <>
       <GlobalStyle />
       <main className='App'>
+        <h2>React 17</h2>
         <HashRouter>
           <Routes>
             <Route path={getRoute('transition')} element={<Transition />} />

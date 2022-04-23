@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
-import { FlexBox } from 'react-styled-flex';
+import { Box, FlexBox } from 'react-styled-flex';
 import styled from 'styled-components';
 import { mapRoutes } from '../constants';
 
 export const FeatureList = () => (
-  <div className={'App'}>
+  <Box className={'App'} maxWidth={'60rem'} margin={'auto'}>
     <h1>React 18 features</h1>
     <FlexBox gap={'1rem'} column>
       {mapRoutes(({ route, title }) => (
         <Feature to={route}>{title}</Feature>
       ))}
     </FlexBox>
-  </div>
+  </Box>
 );
 
 const Feature = styled(Link)`

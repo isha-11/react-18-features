@@ -16,11 +16,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .App {
-    max-width: 516px;
-    margin: auto;
+    padding: 1rem 3rem;
   }
 
-  #root, .App {
+  #root {
     height: 100%;
   }
 
