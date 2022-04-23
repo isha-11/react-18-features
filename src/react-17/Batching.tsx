@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { FlexBox } from 'react-styled-flex';
-import styled from 'styled-components';
+import { Button, Table } from '../common/styled';
 
 export const Batching = () => {
   const [boolean, setBoolean] = useState(true);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(0);
   const [date, setDate] = useState(() => new Date().toLocaleString());
   const [elements, setElements] = useState<JSX.Element[]>([]);
 
@@ -52,32 +52,3 @@ export const Batching = () => {
     </FlexBox>
   );
 };
-
-const Table = styled.table`
-  width: 100%;
-  border-top: 1px solid black;
-
-  td,
-  th {
-    text-align: left;
-    padding: 0.25rem;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-
-    &:last-child {
-      border-right: 1px solid black;
-    }
-  }
-`;
-
-const Button = styled.button`
-  background-color: #20232a;
-  color: #61dafb;
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #383a3e;
-  }
-`;
