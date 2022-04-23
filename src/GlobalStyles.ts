@@ -13,6 +13,18 @@ export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     margin: 0;
+
+    &::-webkit-scrollbar {
+      width: 0.4rem;
+    }
+     
+    &::-webkit-scrollbar-track {
+      background-color: #eee;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: #20232aad;
+    }
   }
 
   .App {

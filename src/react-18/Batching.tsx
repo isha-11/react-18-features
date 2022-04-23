@@ -41,6 +41,7 @@ export const Batching = () => {
         <td>{date}</td>
       </tr>,
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [boolean, number, date]);
 
   return (
