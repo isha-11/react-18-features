@@ -2,6 +2,7 @@ import { GlobalStyle } from './GlobalStyles';
 import { routes } from './constants';
 import { HashRouter, Link, Route, Routes, useParams } from 'react-router-dom';
 import { Box, FlexBox } from 'react-styled-flex';
+import styled from 'styled-components';
 
 export const App = () => {
   return (
@@ -20,11 +21,14 @@ export const App = () => {
 };
 
 const Index = () => (
-  <>
-    <Link to={routes.transition}>Transition</Link>
-    <Link to={routes.batching}>Automatic Batching</Link>
-    <Link to={routes.deferredValue}>Deferred Value</Link>
-  </>
+  <div className={'App'}>
+    <h1>React 18 features</h1>
+    <FlexBox gap={'1rem'} column>
+      <Concept to={routes.transition}>Transition</Concept>
+      <Concept to={routes.batching}>Automatic Batching</Concept>
+      <Concept to={routes.deferredValue}>Deferred Value</Concept>
+    </FlexBox>
+  </div>
 );
 
 const Demo = () => {
@@ -45,3 +49,15 @@ const Demo = () => {
     </FlexBox>
   );
 };
+
+const Concept = styled(Link)`
+  display: block;
+  background-color: #61dafb;
+  color: #20232a;
+  text-decoration: none;
+  padding: 1rem;
+
+  &:hover {
+    background-color: #35b6d9;
+  }
+`;
