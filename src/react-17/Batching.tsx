@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FlexBox } from 'react-styled-flex';
 import { Button, Table } from '../common/styled';
+import { useRenderCount } from '../common/useRenderCount';
 
 export const Batching = () => {
   const [boolean, setBoolean] = useState(true);
   const [number, setNumber] = useState(0);
   const [date, setDate] = useState(() => new Date().toLocaleString());
   const [elements, setElements] = useState<JSX.Element[]>([]);
+  const renderCount = useRenderCount([boolean, number, date]);
 
   const handleClick = () => {
     setBoolean(!boolean);
@@ -26,6 +28,7 @@ export const Batching = () => {
     setElements((prevElements) => [
       ...prevElements,
       <tr key={`${date}_${number}_${boolean}`}>
+        <td>{renderCount}</td>
         <td>{boolean.toString()}</td>
         <td>{number}</td>
         <td>{date}</td>
@@ -42,6 +45,7 @@ export const Batching = () => {
       <Table cellSpacing={0}>
         <thead>
           <tr>
+            <th>Render Count</th>
             <th>Boolean</th>
             <th>Number</th>
             <th>Date</th>
