@@ -18,12 +18,13 @@ export const FeatureList = () => (
 
 const Feature = styled(Link)`
   display: block;
-  background-color: #61dafb;
-  color: #20232a;
+  background-color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
   text-decoration: none;
   padding: 1rem;
+  font-weight: bold;
 
   &:hover {
-    background-color: #35b6d9;
+    background-color: ${(props) => props.theme.color.primary10};
   }
 `;

@@ -19,12 +19,12 @@ export const Table = styled.table`
 
 export const Button = styled.button`
   background-color: #20232a;
-  color: #61dafb;
+  color: ${(props) => props.theme.color.primary};
   border: none;
   outline: none;
   cursor: pointer;
 
   &:hover {
-    background-color: #383a3e;
+    background-color: ${(props) => props.theme.color.secondary10};
   }
 `;

@@ -1,13 +1,15 @@
-import { GlobalStyle } from '../GlobalStyles';
+import { ThemeProvider } from 'styled-components';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { getRoute } from '../routes';
 import { Transition } from './Transition';
 import { Batching } from './Batching';
 import { DeferredValue } from './DeferredValue';
+import { getRoute } from '../routes';
+import { GlobalStyle } from '../GlobalStyles';
+import { theme } from '../theme';
 
 export const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <main className='App'>
         <h2>React 18</h2>
@@ -22,6 +24,6 @@ export const App = () => {
           </Routes>
         </HashRouter>
       </main>
-    </>
+    </ThemeProvider>
   );
 };

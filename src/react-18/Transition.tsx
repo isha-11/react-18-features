@@ -65,7 +65,7 @@ const Card = styled(FlexBox).attrs({
   width: '100%',
 })`
   background-color: #20232a;
-  color: #61dafb;
+  color: ${(props) => props.theme.color.primary};
 `;
 
 const StyledQuery = styled.div`

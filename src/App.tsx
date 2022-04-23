@@ -1,12 +1,14 @@
 import { GlobalStyle } from './GlobalStyles';
+import { ThemeProvider } from 'styled-components';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Box } from 'react-styled-flex';
 import { FeatureList } from './main/FeatureList';
 import { Demo } from './main/Demo';
+import { theme } from './theme';
 
 export const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <HashRouter>
         <Box as={'main'} height={'100%'}>
@@ -16,6 +18,6 @@ export const App = () => {
           </Routes>
         </Box>
       </HashRouter>
-    </>
+    </ThemeProvider>
   );
 };
