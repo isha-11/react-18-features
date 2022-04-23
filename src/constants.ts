@@ -13,4 +13,12 @@ const routes = {
   },
 };
 
-export const getRoute = (key: keyof typeof routes) => routes[key].route;
+type RouteKey = keyof typeof routes;
+type RouteConfig = typeof routes[RouteKey];
+const routeKeys = Object.keys(routes);
+
+export const getRoute = (key: RouteKey) => routes[key].route;
+
+export const mapRoutes = <T>(mapFn: (routeConfig: RouteConfig) => T) => {
+  return routeKeys.map((key) => mapFn(routes[key]));
+};
