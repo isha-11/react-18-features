@@ -1,14 +1,14 @@
 const routes = {
   batching: {
-    title: 'Automatic batching',
+    title: 'Automatic Batching',
     route: '/batching',
   },
   transition: {
-    title: 'Transition',
+    title: 'Transition: useTransition',
     route: '/transition',
   },
   deferredValue: {
-    title: 'Deferred Value',
+    title: 'Transition: useDeferredValue',
     route: '/deferred-value',
   },
 };

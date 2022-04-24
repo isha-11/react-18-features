@@ -40,7 +40,7 @@ export const Batching = () => {
   return (
     <FlexBox column gap={'1rem'}>
       <FlexBox gap={'1rem'}>
-        <Button onClick={handleClick}>setState in Event handler</Button>
+        <Button onClick={handleClick}>setState in event handler</Button>
         <Button onClick={handleTimeoutClick}>setState in setTimeout</Button>
       </FlexBox>
       <Table cellSpacing={0}>
