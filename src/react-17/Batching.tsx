@@ -6,21 +6,21 @@ import { useRenderCount } from '../common/useRenderCount';
 export const Batching = () => {
   const [boolean, setBoolean] = useState(true);
   const [number, setNumber] = useState(0);
-  const [date, setDate] = useState(() => new Date().toLocaleString());
+  const [date, setDate] = useState(() => Date.now());
   const [elements, setElements] = useState<JSX.Element[]>([]);
   const renderCount = useRenderCount([boolean, number, date]);
 
   const handleClick = () => {
     setBoolean(!boolean);
     setNumber(number + 1);
-    setDate(new Date().toLocaleString());
+    setDate(Date.now());
   };
 
   const handleTimeoutClick = () => {
     setTimeout(() => {
       setBoolean(!boolean);
       setNumber(number + 1);
-      setDate(new Date().toLocaleString());
+      setDate(Date.now());
     }, 0);
   };
 
@@ -31,7 +31,7 @@ export const Batching = () => {
         <td>{renderCount}</td>
         <td>{boolean.toString()}</td>
         <td>{number}</td>
-        <td>{date}</td>
+        <td>{new Date(date).toISOString()}</td>
       </tr>,
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
