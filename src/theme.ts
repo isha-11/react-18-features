@@ -1,10 +1,18 @@
-import { darken, lighten } from 'polished';
+import { darken, lighten, transparentize } from 'polished';
+
+const primary = '#61dafb';
+const secondary = '#20232a';
 
 export const theme = {
   color: {
-    primary: '#61dafb',
-    primary10: darken(0.15, '#61dafb'), //'#35b6d9',
-    secondary: '#20232a',
-    secondary10: lighten(0.15, '#20232a'), // #383a3e
+    primary,
+    primary10: darken(0.15, primary), //'#35b6d9',
+    secondary,
+    secondary10: lighten(0.15, secondary), // #383a3e
+
+    scrollbar: {
+      track: '#eee',
+      thumb: transparentize(0.15, secondary),
+    },
   },
 };

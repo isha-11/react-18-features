@@ -7,6 +7,10 @@ declare module 'styled-components' {
       primary10: CSSProperties['color'];
       secondary: CSSProperties['color'];
       secondary10: CSSProperties['color'];
+      scrollbar: {
+        track: CSSProperties['color'];
+        thumb: CSSProperties['color'];
+      };
     };
   }
 }

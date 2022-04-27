@@ -19,11 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     }
      
     &::-webkit-scrollbar-track {
-      background-color: #eee;
+      background-color: ${(props) => props.theme.color.scrollbar.track};
     }
      
     &::-webkit-scrollbar-thumb {
-      background-color: #20232aad;
+      background-color: ${(props) => props.theme.color.scrollbar.thumb};
     }
   }
 
