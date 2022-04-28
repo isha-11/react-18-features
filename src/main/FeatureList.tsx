@@ -25,6 +25,6 @@ const Feature = styled(Link)`
   font-weight: bold;
 
   &:hover {
-    background-color: ${(props) => props.theme.color.primary10};
+    background-color: ${(props) => props.theme.color.primary15};
   }
 `;

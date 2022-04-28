@@ -6,9 +6,9 @@ const secondary = '#20232a';
 export const theme = {
   color: {
     primary,
-    primary10: darken(0.15, primary), //'#35b6d9',
+    primary15: darken(0.15, primary), //'#35b6d9',
     secondary,
-    secondary10: lighten(0.15, secondary), // #383a3e
+    secondary15: lighten(0.15, secondary), // #383a3e
 
     scrollbar: {
       track: '#eee',
