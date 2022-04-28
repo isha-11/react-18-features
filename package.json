@@ -6,6 +6,9 @@
   "scripts": {
     "start": "vite --host",
     "preview": "vite preview",
+    "test": "run-p test:*",
+    "test:eslint": "eslint --max-warnings=0 .",
+    "test:types": "tsc --noEmit",
     "lint": "run-s lint:*",
     "lint:eslint": "eslint --fix .",
     "lint:pkg-json": "sort-package-json",
