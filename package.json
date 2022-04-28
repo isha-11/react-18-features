@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "license": "0BSD",
+  "author": {
+    "name": "Isha Pachkawade",
+    "email": "isha.pachkawade11@gmail.com"
+  },
   "scripts": {
     "start": "vite --host",
     "preview": "vite preview",
