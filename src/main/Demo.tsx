@@ -28,5 +28,5 @@ export const Demo = () => {
 const Frame = styled.iframe`
   flex: 1;
   border: none;
-  box-shadow: 1px 1px 1rem 1px #ccc;
+  box-shadow: 1px 1px 1rem 1px ${(props) => props.theme.color.shadow};
 `;

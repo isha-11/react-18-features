@@ -11,6 +11,7 @@ declare module 'styled-components' {
         track: CSSProperties['color'];
         thumb: CSSProperties['color'];
       };
+      shadow: CSSProperties['color'];
     };
   }
 }

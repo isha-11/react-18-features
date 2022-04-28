@@ -14,5 +14,7 @@ export const theme = {
       track: '#eee',
       thumb: transparentize(0.15, secondary),
     },
+
+    shadow: '#ccc',
   },
 };
