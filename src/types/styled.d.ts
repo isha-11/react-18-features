@@ -12,6 +12,7 @@ declare module 'styled-components' {
         thumb: CSSProperties['color'];
       };
       shadow: CSSProperties['color'];
+      border: CSSProperties['color'];
     };
   }
 }

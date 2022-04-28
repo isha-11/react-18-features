@@ -3,18 +3,15 @@ import styled from 'styled-components';
 
 export const Table = styled.table`
   width: 100%;
-  border-top: 1px solid black;
+  border-top: 1px solid ${(props) => props.theme.color.border};
+  border-right: 1px solid ${(props) => props.theme.color.border};
 
   td,
   th {
     text-align: left;
     padding: 0.25rem;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-
-    &:last-child {
-      border-right: 1px solid black;
-    }
+    border-bottom: 1px solid ${(props) => props.theme.color.border};
+    border-left: 1px solid ${(props) => props.theme.color.border};
   }
 `;
 

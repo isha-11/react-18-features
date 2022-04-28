@@ -16,5 +16,6 @@ export const theme = {
     },
 
     shadow: '#ccc',
+    border: secondary,
   },
 };
