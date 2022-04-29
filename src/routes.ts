@@ -11,6 +11,10 @@ const routes = {
     title: 'Transition: useDeferredValue',
     route: '/deferred-value',
   },
+  suspense: {
+    title: 'Suspense + Transition',
+    route: '/suspense',
+  },
 };
 
 /* types */
