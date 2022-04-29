@@ -6,7 +6,7 @@ import { DeferredValue } from './DeferredValue';
 import { getRoute } from '../routes';
 import { GlobalStyle } from '../GlobalStyles';
 import { theme } from '../theme';
-import { Suspense } from './Suspense';
+import { SuspenseWithTransition } from './SuspenseWithTransition';
 
 export const App = () => {
   return (
@@ -22,7 +22,10 @@ export const App = () => {
               path={getRoute('deferredValue')}
               element={<DeferredValue />}
             />
-            <Route path={getRoute('suspense')} element={<Suspense />} />
+            <Route
+              path={getRoute('suspense')}
+              element={<SuspenseWithTransition />}
+            />
           </Routes>
         </HashRouter>
       </main>

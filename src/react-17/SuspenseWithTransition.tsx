@@ -2,7 +2,7 @@ import { ChangeEvent, useState, useTransition } from 'react';
 import { FlexBox } from 'react-styled-flex';
 import { StyledInput } from '../common/styled';
 
-export const Suspense = () => {
+export const SuspenseWithTransition = () => {
   const [query, setQuery] = useState('');
   const [isPending, startTransition] = useTransition();
 
