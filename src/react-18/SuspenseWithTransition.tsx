@@ -4,6 +4,7 @@ import { FlexBox } from 'react-styled-flex';
 import { fetcher } from '../common/fetcher';
 import { queryClient } from '../common/queryClient';
 import { StyledInput } from '../common/styled';
+import { useData } from '../common/useData';
 
 export const SuspenseWithTransition = () => {
   const [urgentQuery, setUrgentQuery] = useState('');
@@ -28,13 +29,14 @@ export const SuspenseWithTransition = () => {
 };
 
 const Result = ({ query }: { query: string }) => {
-  const { data: countries } = useQuery(query, () =>
-    fetcher(
-      query
-        ? `https://restcountries.com/v3.1/name/${query}`
-        : 'https://restcountries.com/v3.1/all',
-    ),
-  );
+  // const { data: countries } = useQuery(query, () =>
+  //   fetcher(
+  //     query
+  //       ? `https://restcountries.com/v3.1/name/${query}`
+  //       : 'https://restcountries.com/v3.1/all',
+  //   ),
+  // );
+  const countries = useData<Array<Country>>(query);
 
   return (
     <ul>
