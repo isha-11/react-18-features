@@ -1,6 +1,7 @@
 import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider, useQuery } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
+import { fetcher } from '../common/fetcher';
 import { queryClient } from '../common/queryClient';
 import { StyledInput } from '../common/styled';
 
@@ -25,15 +26,25 @@ export const SuspenseWithTransition = () => {
 };
 
 const Result = ({ query }: { query: string }) => {
-  const people = useQuery(query, () =>
-    fetcher(`https://swapi.dev/api/people/?search=${query}`),
+  const { data: countries } = useQuery(query, () =>
+    fetcher(
+      query
+        ? `https://restcountries.com/v3.1/name/${query}`
+        : 'https://restcountries.com/v3.1/all',
+    ),
   );
 
-  console.log(people);
-  return <div></div>;
+  return (
+    <ul>
+      {countries.map((country: Country) => (
+        <li>{country.name.official}</li>
+      ))}
+    </ul>
+  );
 };
 
-const fetcher = async (url: string) => {
-  const request = await fetch(url);
-  return request.json();
-};
+interface Country {
+  name: {
+    official: string;
+  };
+}
