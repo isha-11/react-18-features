@@ -6,19 +6,21 @@ import { queryClient } from '../common/queryClient';
 import { StyledInput } from '../common/styled';
 
 export const SuspenseWithTransition = () => {
-  const [query, setQuery] = useState('');
+  const [urgentQuery, setUrgentQuery] = useState('');
+  const [nonUrgentQuery, setNonUrgentQuery] = useState('');
   const [isPending, startTransition] = useTransition();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value);
+    setUrgentQuery(e.target.value);
+    startTransition(() => setNonUrgentQuery(e.target.value));
   };
 
   return (
     <QueryClientProvider client={queryClient}>
       <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
-        <StyledInput type='text' value={query} onChange={handleChange} />
+        <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
         <Suspense fallback={'Loading...'}>
-          <Result query={query} />
+          <Result query={nonUrgentQuery} />
         </Suspense>
       </FlexBox>
     </QueryClientProvider>
