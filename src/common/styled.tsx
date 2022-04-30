@@ -54,3 +54,24 @@ export const ReactLogo = styled.img.attrs({
   height: 200px;
   width: 200px;
 `;
+
+/* suspense + transition components */
+
+export const List = styled(FlexBox).attrs({
+  as: 'ul',
+  column: true,
+  gap: '0.25rem',
+  padding: '0',
+  margin: '0',
+})``;
+
+export const Item = styled(FlexBox).attrs({
+  as: 'li',
+  gap: '1rem',
+  alignItems: 'center',
+  padding: '0.5rem',
+})`
+  list-style-type: none;
+  background-color: ${(props) => props.theme.color.secondary};
+  color: ${(props) => props.theme.color.primary};
+`;

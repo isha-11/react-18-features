@@ -1,9 +1,8 @@
 import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider, useQuery } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
-import styled from 'styled-components';
 import { queryClient } from '../common/queryClient';
-import { StyledInput } from '../common/styled';
+import { Item, List, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
@@ -60,25 +59,6 @@ const Result = ({ query }: { query: string }) => {
     </List>
   );
 };
-
-const List = styled(FlexBox).attrs({
-  as: 'ul',
-  column: true,
-  gap: '0.25rem',
-  padding: '0',
-  margin: '0',
-})``;
-
-const Item = styled(FlexBox).attrs({
-  as: 'li',
-  gap: '1rem',
-  alignItems: 'center',
-  padding: '0.5rem',
-})`
-  list-style-type: none;
-  background-color: ${(props) => props.theme.color.secondary};
-  color: ${(props) => props.theme.color.primary};
-`;
 
 interface Country {
   name: {
