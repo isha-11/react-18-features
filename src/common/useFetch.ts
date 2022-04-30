@@ -2,7 +2,7 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const fetcher = async (url: string) => {
   const response = await fetch(url);
   const data = await response.json();
-  //await delay(500);
+  await delay(500);
   return response.status === 404 ? [] : data;
 };
 

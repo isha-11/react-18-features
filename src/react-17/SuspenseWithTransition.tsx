@@ -1,5 +1,5 @@
-import { ChangeEvent, Suspense, useState, useTransition } from 'react';
-import { QueryClientProvider, useQuery } from 'react-query';
+import { ChangeEvent, Suspense, useState } from 'react';
+import { QueryClientProvider } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
 import { queryClient } from '../common/queryClient';
 import { Flag, Item, List, StyledInput } from '../common/styled';
