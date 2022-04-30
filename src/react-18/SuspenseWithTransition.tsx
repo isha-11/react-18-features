@@ -2,7 +2,7 @@ import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
 import { queryClient } from '../common/queryClient';
-import { Flag, Item, List, StyledInput } from '../common/styled';
+import { Flag, Item, List, Spinner, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
@@ -19,7 +19,7 @@ export const SuspenseWithTransition = () => {
     <QueryClientProvider client={queryClient}>
       <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
         <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
-        <Suspense fallback={'Loading...'}>
+        <Suspense fallback={<Spinner />}>
           <div style={{ opacity: isPending ? 0.4 : 1 }}>
             <Result query={nonUrgentQuery} />
           </div>

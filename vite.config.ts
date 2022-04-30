@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint';
+import svgrPlugin from 'vite-plugin-svgr';
 
 const getHTMLPath = (fileName: string) =>
   new URL(fileName, import.meta.url).pathname;
@@ -9,12 +10,13 @@ const getHTMLPath = (fileName: string) =>
 export default defineConfig({
   base: '/react-18-features/',
   plugins: [
+    eslintPlugin(),
+    svgrPlugin(),
     react({
       babel: {
         configFile: true,
       },
     }),
-    eslintPlugin(),
   ],
   build: {
     rollupOptions: {
