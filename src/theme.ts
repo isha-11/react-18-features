@@ -7,9 +7,10 @@ export const theme = {
   breakpoint: '64rem',
   color: {
     primary,
-    primary15: darken(0.15, primary), //'#35b6d9',
+    primary15: darken(0.15, primary),
+    primary20: lighten(0.2, primary),
     secondary,
-    secondary15: lighten(0.15, secondary), // #383a3e
+    secondary15: lighten(0.15, secondary),
 
     scrollbar: {
       track: '#eee',

@@ -8,6 +8,7 @@ declare module 'styled-components' {
     color: {
       primary: RequiredCSSProperties['color'];
       primary15: RequiredCSSProperties['color'];
+      primary20: RequiredCSSProperties['color'];
       secondary: RequiredCSSProperties['color'];
       secondary15: RequiredCSSProperties['color'];
 
