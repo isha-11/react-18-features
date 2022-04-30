@@ -77,7 +77,7 @@ export const Item = styled(FlexBox).attrs({
   color: ${(props) => props.theme.color.primary};
   background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.secondary};
-  background-color: ${(props) => lighten(0.2, props.theme.color.primary!)};
+  background-color: ${(props) => lighten(0.2, props.theme.color.primary)};
 `;
 
 export const Flag = styled.img.attrs({

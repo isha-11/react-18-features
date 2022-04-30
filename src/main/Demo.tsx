@@ -36,7 +36,7 @@ const Page = styled.div`
   padding: 0 3rem 3rem 3rem;
 
   height: 100%;
-  @media (max-width: 64rem) {
+  @media (max-width: ${(props) => props.theme.breakpoint}) {
     height: 200%;
 
     [aria-label='content'] {

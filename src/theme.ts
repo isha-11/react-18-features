@@ -4,6 +4,7 @@ const primary = '#61dafb';
 const secondary = '#20232a';
 
 export const theme = {
+  breakpoint: '64rem',
   color: {
     primary,
     primary15: darken(0.15, primary), //'#35b6d9',

@@ -1,18 +1,23 @@
-import 'styled-components';
+import { CSSProperties } from 'styled-components';
+
+type RequiredCSSProperties = Required<CSSProperties>;
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    breakpoint: RequiredCSSProperties['maxWidth'];
     color: {
-      primary: CSSProperties['color'];
-      primary15: CSSProperties['color'];
-      secondary: CSSProperties['color'];
-      secondary15: CSSProperties['color'];
+      primary: RequiredCSSProperties['color'];
+      primary15: RequiredCSSProperties['color'];
+      secondary: RequiredCSSProperties['color'];
+      secondary15: RequiredCSSProperties['color'];
+
+      shadow: RequiredCSSProperties['color'];
+      border: RequiredCSSProperties['color'];
+
       scrollbar: {
-        track: CSSProperties['color'];
-        thumb: CSSProperties['color'];
+        track: RequiredCSSProperties['color'];
+        thumb: RequiredCSSProperties['color'];
       };
-      shadow: CSSProperties['color'];
-      border: CSSProperties['color'];
     };
   }
 }
