@@ -1,6 +1,12 @@
 import { ChangeEvent, useDeferredValue, useState } from 'react';
 import { FlexBox } from 'react-styled-flex';
-import { Card, ReactLogo, StyledInput, StyledQuery } from '../common/styled';
+import {
+  Card,
+  ReactLogo,
+  Spinner,
+  StyledInput,
+  StyledQuery,
+} from '../common/styled';
 
 export const DeferredValue = () => {
   const [query, setQuery] = useState('');
@@ -14,7 +20,7 @@ export const DeferredValue = () => {
   return (
     <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
       <StyledInput type='text' value={query} onChange={handleChange} />
-      {isPending ? <div>Loading...</div> : <Result query={deferredQuery} />}
+      {isPending ? <Spinner /> : <Result query={deferredQuery} />}
     </FlexBox>
   );
 };
