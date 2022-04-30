@@ -75,3 +75,11 @@ export const Item = styled(FlexBox).attrs({
   background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.primary};
 `;
+
+export const FlagImage = styled.img.attrs({
+  loading: 'lazy',
+  alt: 'country flag',
+})`
+  height: 1.25rem;
+  width: 2rem;
+`;

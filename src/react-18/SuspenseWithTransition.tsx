@@ -1,13 +1,13 @@
 import { ChangeEvent, Suspense, useState, useTransition } from 'react';
-import { QueryClientProvider, useQuery } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
 import { queryClient } from '../common/queryClient';
-import { Item, List, StyledInput } from '../common/styled';
+import { FlagImage, Item, List, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
-  const [urgentQuery, setUrgentQuery] = useState('ind');
-  const [nonUrgentQuery, setNonUrgentQuery] = useState('ind');
+  const [urgentQuery, setUrgentQuery] = useState('');
+  const [nonUrgentQuery, setNonUrgentQuery] = useState('');
   const [isPending, startTransition] = useTransition();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +20,9 @@ export const SuspenseWithTransition = () => {
       <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
         <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
         <Suspense fallback={'Loading...'}>
-          <Result query={nonUrgentQuery} />
+          <div style={{ opacity: isPending ? 0.8 : 1 }}>
+            <Result query={nonUrgentQuery} />
+          </div>
         </Suspense>
       </FlexBox>
     </QueryClientProvider>
@@ -47,12 +49,7 @@ const Result = ({ query }: { query: string }) => {
         .sort((a, b) => a.name.official.localeCompare(b.name.official))
         .map((country: Country) => (
           <Item key={country.name.official}>
-            <img
-              src={country.flags.png}
-              loading='lazy'
-              height={20}
-              width={32}
-            ></img>
+            <FlagImage src={country.flags.png} />
             <span>{country.name.official}</span>
           </Item>
         ))}
