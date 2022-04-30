@@ -38,6 +38,7 @@ const Page = styled.div`
   height: 100%;
   @media (max-width: ${(props) => props.theme.breakpoint}) {
     height: 200%;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 
     [aria-label='content'] {
       flex-direction: column;
