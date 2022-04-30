@@ -1,3 +1,4 @@
+import { lighten } from 'polished';
 import { FlexBox } from 'react-styled-flex';
 import styled from 'styled-components';
 
@@ -72,11 +73,14 @@ export const Item = styled(FlexBox).attrs({
   padding: '0.5rem',
 })`
   list-style-type: none;
-  background-color: ${(props) => props.theme.color.secondary};
+  font-weight: bold;
   color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.secondary};
+  color: ${(props) => props.theme.color.secondary};
+  background-color: ${(props) => lighten(0.2, props.theme.color.primary!)};
 `;
 
-export const FlagImage = styled.img.attrs({
+export const Flag = styled.img.attrs({
   loading: 'lazy',
   alt: 'country flag',
 })`

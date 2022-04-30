@@ -2,7 +2,7 @@ import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider, useQuery } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
 import { queryClient } from '../common/queryClient';
-import { StyledInput } from '../common/styled';
+import { Flag, Item, List, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
@@ -32,23 +32,32 @@ const Result = ({ query }: { query: string }) => {
   //       : 'https://restcountries.com/v3.1/all',
   //   ),
   // );
-  const countries = useFetch(
+  const countries: Country[] = useFetch(
     query
       ? `https://restcountries.com/v3.1/name/${query}`
       : 'https://restcountries.com/v3.1/all',
   );
 
   return (
-    <ul>
-      {countries.map((country: Country) => (
-        <li key={country.name.official}>{country.name.official}</li>
-      ))}
-    </ul>
+    <List>
+      {countries
+        .sort((a, b) => a.name.official.localeCompare(b.name.official))
+        .map((country: Country) => (
+          <Item key={country.name.official}>
+            <Flag src={country.flags.png} />
+            <span>{country.name.official}</span>
+          </Item>
+        ))}
+    </List>
   );
 };
 
 interface Country {
   name: {
     official: string;
+  };
+  flags: {
+    png: string;
+    svg: string;
   };
 }

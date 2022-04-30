@@ -2,7 +2,7 @@ import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
 import { queryClient } from '../common/queryClient';
-import { FlagImage, Item, List, StyledInput } from '../common/styled';
+import { Flag, Item, List, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
@@ -20,7 +20,7 @@ export const SuspenseWithTransition = () => {
       <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
         <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
         <Suspense fallback={'Loading...'}>
-          <div style={{ opacity: isPending ? 0.8 : 1 }}>
+          <div style={{ opacity: isPending ? 0.4 : 1 }}>
             <Result query={nonUrgentQuery} />
           </div>
         </Suspense>
@@ -49,7 +49,7 @@ const Result = ({ query }: { query: string }) => {
         .sort((a, b) => a.name.official.localeCompare(b.name.official))
         .map((country: Country) => (
           <Item key={country.name.official}>
-            <FlagImage src={country.flags.png} />
+            <Flag src={country.flags.png} />
             <span>{country.name.official}</span>
           </Item>
         ))}
