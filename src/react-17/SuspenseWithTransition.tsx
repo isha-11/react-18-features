@@ -1,9 +1,9 @@
 import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider, useQuery } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
-import { fetcher } from '../common/fetcher';
 import { queryClient } from '../common/queryClient';
 import { StyledInput } from '../common/styled';
+import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
   const [query, setQuery] = useState('');
@@ -25,18 +25,23 @@ export const SuspenseWithTransition = () => {
 };
 
 const Result = ({ query }: { query: string }) => {
-  const { data: countries } = useQuery(query, () =>
-    fetcher(
-      query
-        ? `https://restcountries.com/v3.1/name/${query}`
-        : 'https://restcountries.com/v3.1/all',
-    ),
+  // const { data: countries } = useQuery(query, () =>
+  //   fetcher(
+  //     query
+  //       ? `https://restcountries.com/v3.1/name/${query}`
+  //       : 'https://restcountries.com/v3.1/all',
+  //   ),
+  // );
+  const countries = useFetch(
+    query
+      ? `https://restcountries.com/v3.1/name/${query}`
+      : 'https://restcountries.com/v3.1/all',
   );
 
   return (
     <ul>
       {countries.map((country: Country) => (
-        <li>{country.name.official}</li>
+        <li key={country.name.official}>{country.name.official}</li>
       ))}
     </ul>
   );

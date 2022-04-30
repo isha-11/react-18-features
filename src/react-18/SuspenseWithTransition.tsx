@@ -1,10 +1,9 @@
 import { ChangeEvent, Suspense, useState, useTransition } from 'react';
 import { QueryClientProvider, useQuery } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
-import { fetcher } from '../common/fetcher';
 import { queryClient } from '../common/queryClient';
 import { StyledInput } from '../common/styled';
-import { useData } from '../common/useData';
+import { useFetch } from '../common/useFetch';
 
 export const SuspenseWithTransition = () => {
   const [urgentQuery, setUrgentQuery] = useState('');
@@ -36,12 +35,16 @@ const Result = ({ query }: { query: string }) => {
   //       : 'https://restcountries.com/v3.1/all',
   //   ),
   // );
-  const countries = useData<Array<Country>>(query);
+  const countries: Country[] = useFetch(
+    query
+      ? `https://restcountries.com/v3.1/name/${query}`
+      : 'https://restcountries.com/v3.1/all',
+  );
 
   return (
     <ul>
       {countries.map((country: Country) => (
-        <li>{country.name.official}</li>
+        <li key={country.name.official}>{country.name.official}</li>
       ))}
     </ul>
   );
