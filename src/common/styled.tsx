@@ -37,19 +37,21 @@ export const Card = styled(FlexBox).attrs({
   column: true,
   padding: '1rem',
   width: '100%',
+  gap: '1rem',
 })`
   background-color: ${(props) => props.theme.color.secondary};
   color: ${(props) => props.theme.color.primary};
 `;
 
 export const StyledQuery = styled.div`
+  font-weight: bold;
   word-wrap: break-word;
   white-space: pre-wrap;
   word-break: break-word;
 `;
 
 export const ReactLogo = styled(Logo)`
-  height: 6rem;
+  height: 8rem;
 `;
 
 /* suspense + transition components */
