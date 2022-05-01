@@ -5,7 +5,7 @@ const secondary = '#20232a';
 
 export const theme = {
   media: {
-    mobile: '@media (max-device-width: 64rem)',
+    mobile: '@media (max-device-width: 48rem)',
   },
   color: {
     primary,

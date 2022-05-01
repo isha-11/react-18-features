@@ -1,12 +1,6 @@
 import { ChangeEvent, useState, useTransition } from 'react';
 import { FlexBox } from 'react-styled-flex';
-import {
-  Card,
-  ReactLogo,
-  Spinner,
-  StyledInput,
-  StyledQuery,
-} from '../common/styled';
+import { Card, ReactLogo, StyledInput, StyledQuery } from '../common/styled';
 
 export const Transition = () => {
   const [urgentQuery, setUrgentQuery] = useState('');
@@ -21,7 +15,9 @@ export const Transition = () => {
   return (
     <FlexBox as='section' column gap={'1rem'}>
       <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
-      {isPending ? <Spinner /> : <Result query={nonUrgentQuery} />}
+      <div style={{ opacity: isPending ? 0.7 : 1 }}>
+        <Result query={nonUrgentQuery} />
+      </div>
     </FlexBox>
   );
 };

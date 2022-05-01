@@ -4,7 +4,12 @@ import styled from 'styled-components';
 import { mapRoutes } from '../routes';
 
 export const FeatureList = () => (
-  <Box className={'App'} maxWidth={'60rem'} margin={'auto'} padding={'0 1rem'}>
+  <Box
+    className={'App'}
+    maxWidth={'60rem'}
+    margin={'auto'}
+    padding={'0.005rem 1rem'}
+  >
     <h1>React 18 features</h1>
     <FlexBox gap={'1rem'} column>
       {mapRoutes(({ route, title }) => (
