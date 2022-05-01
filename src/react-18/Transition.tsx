@@ -19,7 +19,7 @@ export const Transition = () => {
   };
 
   return (
-    <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
+    <FlexBox as='section' column gap={'1rem'}>
       <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
       {isPending ? <Spinner /> : <Result query={nonUrgentQuery} />}
     </FlexBox>

@@ -91,22 +91,16 @@ export const Flag = styled.img.attrs({
   width: 2rem;
 `;
 
-export const Spinner = () => {
-  const { color } = useTheme();
-
-  return (
-    <FlexBox gap={'0.5rem'} alignItems={'center'}>
-      <SpinningLogo
-        height={'3rem'}
-        fill={color.secondary}
-        stroke={color.secondary}
-      />
-      <h3>Loading ...</h3>
-    </FlexBox>
-  );
-};
+export const Spinner = () => (
+  <FlexBox gap={'0.5rem'} alignItems={'center'}>
+    <SpinningLogo height={'3rem'} />
+    <h3>Loading ...</h3>
+  </FlexBox>
+);
 
 const SpinningLogo = styled(Logo)`
+  fill: ${(props) => props.theme.color.secondary};
+  stroke: ${(props) => props.theme.color.secondary};
   animation: rotate 4s linear infinite;
 
   @keyframes rotate {

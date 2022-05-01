@@ -10,7 +10,7 @@ export const Transition = () => {
   };
 
   return (
-    <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
+    <FlexBox as='section' column gap={'1rem'}>
       <StyledInput type='text' value={query} onChange={handleChange} />
       <Result query={query} />
     </FlexBox>

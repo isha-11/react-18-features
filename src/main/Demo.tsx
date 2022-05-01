@@ -38,7 +38,7 @@ const Page = styled.div`
   padding: ${(props) => props.theme.padding.app.desktop};
   padding-top: 0;
 
-  ${(props) => props.theme.media.mobile} {
+  @media (max-width: 64rem) {
     height: 200%;
     padding: ${(props) => props.theme.padding.app.mobile};
     padding-top: 0;
