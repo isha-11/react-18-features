@@ -93,7 +93,7 @@ export const StyledQuery = styled.div`
   word-break: break-word;
 `;
 
-export const ReactLogo = styled(Icon).attrs({ type: 'logo' })`
+export const ReactLogo = styled(Icon).attrs({ type: 'logo', color: 'primary' })`
   height: 8rem;
 `;
 
