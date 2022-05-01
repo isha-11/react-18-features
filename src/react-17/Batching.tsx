@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FlexBox } from 'react-styled-flex';
+import { formatDate } from '../common/format-date';
 import { Button, Table } from '../common/styled';
 import { useRenderCount } from '../common/useRenderCount';
 
@@ -31,7 +32,7 @@ export const Batching = () => {
         <td>{renderCount}</td>
         <td>{boolean.toString()}</td>
         <td>{number}</td>
-        <td>{new Date(date).toISOString()}</td>
+        <td>{formatDate(date)}</td>
       </tr>,
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
