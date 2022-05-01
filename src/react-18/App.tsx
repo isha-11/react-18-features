@@ -7,12 +7,13 @@ import { getRoute } from '../routes';
 import { GlobalStyle } from '../GlobalStyles';
 import { theme } from '../theme';
 import { SuspenseWithTransition } from './SuspenseWithTransition';
+import { DemoApp } from '../common/styled';
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <main className='App'>
+      <DemoApp>
         <h2>React 18</h2>
         <HashRouter>
           <Routes>
@@ -28,7 +29,7 @@ export const App = () => {
             />
           </Routes>
         </HashRouter>
-      </main>
+      </DemoApp>
     </ThemeProvider>
   );
 };

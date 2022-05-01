@@ -4,7 +4,6 @@ type RequiredCSSProperties = Required<CSSProperties>;
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    breakpoint: RequiredCSSProperties['maxWidth'];
     media: {
       mobile: string;
     };

@@ -28,10 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .App {
-    padding: 0.005rem 3rem;
-  }
-
   #root {
     height: 100%;
   }

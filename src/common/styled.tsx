@@ -2,6 +2,13 @@ import styled, { useTheme } from 'styled-components';
 import { FlexBox } from 'react-styled-flex';
 import { ReactComponent as Logo } from './react-logo.svg';
 
+export const DemoApp = styled.main`
+  padding: 0.005rem 3rem;
+  ${(props) => props.theme.media.mobile} {
+    padding: 0.005rem 1.5rem;
+  }
+`;
+
 export const Table = styled.table`
   width: 100%;
   border-top: 1px solid ${(props) => props.theme.color.border};
