@@ -17,7 +17,7 @@ export const SuspenseWithTransition = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <FlexBox as='section' column gap={'1rem'} padding={'2rem 0'}>
+      <FlexBox as='section' column gap={'1rem'}>
         <StyledInput type='text' value={urgentQuery} onChange={handleChange} />
         <Suspense fallback={<Spinner />}>
           <div style={{ opacity: isPending ? 0.4 : 1 }}>

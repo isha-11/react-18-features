@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .App {
-    padding: 1rem 3rem;
+    padding: 0.005rem 3rem;
   }
 
   #root {
