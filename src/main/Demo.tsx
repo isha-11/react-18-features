@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { FlexItem } from 'react-styled-flex';
 import styled from 'styled-components';
+import { FloatingHomeButton } from '../common/styled';
 import { getTitleByRoute } from '../routes';
 
 export const Demo = () => {
@@ -8,6 +9,7 @@ export const Demo = () => {
 
   return (
     <Page>
+      <FloatingHomeButton />
       {demoPath ? <h1>{getTitleByRoute(`/${demoPath}`)}</h1> : null}
       <FlexItem
         box

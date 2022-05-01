@@ -1,6 +1,7 @@
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { FlexBox } from 'react-styled-flex';
-import { ReactComponent as Logo } from './react-logo.svg';
+import { Icon } from './icon';
+import { Link } from 'react-router-dom';
 
 export const DemoApp = styled.main`
   padding: ${(props) => props.theme.padding.app.desktop};
@@ -32,10 +33,37 @@ export const Button = styled.button`
   outline: none;
   cursor: pointer;
 
-  &:hover {
+  &:active {
     background-color: ${(props) => props.theme.color.secondary15};
   }
+  @media (pointer: fine) {
+    &:hover {
+      background-color: ${(props) => props.theme.color.secondary15};
+    }
+  }
 `;
+
+export const Fab = styled(Button)`
+  position: fixed;
+
+  bottom: 1rem;
+  right: 1rem;
+
+  height: 3rem;
+  width: 3rem;
+  padding: 0.6rem;
+  border-radius: 100%;
+
+  box-shadow: 1px 1px 1rem 1px #000;
+`;
+
+export const FloatingHomeButton = () => {
+  return (
+    <Fab as={Link} to={'/'}>
+      <Icon type='home' color={'primary'} />
+    </Fab>
+  );
+};
 
 export const ButtonContainer = styled(FlexBox)`
   ${(props) => props.theme.media.mobile} {
@@ -65,7 +93,7 @@ export const StyledQuery = styled.div`
   word-break: break-word;
 `;
 
-export const ReactLogo = styled(Logo)`
+export const ReactLogo = styled(Icon).attrs({ type: 'logo' })`
   height: 8rem;
 `;
 
@@ -106,9 +134,7 @@ export const Spinner = () => (
   </FlexBox>
 );
 
-const SpinningLogo = styled(Logo)`
-  fill: ${(props) => props.theme.color.secondary};
-  stroke: ${(props) => props.theme.color.secondary};
+const SpinningLogo = styled(Icon).attrs({ type: 'logo', color: 'secondary' })`
   animation: rotate 4s linear infinite;
 
   @keyframes rotate {
