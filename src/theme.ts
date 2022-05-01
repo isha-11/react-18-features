@@ -24,7 +24,7 @@ export const theme = {
   },
   padding: {
     app: {
-      mobile: '1.5rem',
+      mobile: '1rem',
       desktop: '3rem',
     },
   },
