@@ -1,42 +1,42 @@
 import { useEffect, useState } from 'react';
 import { FlexBox } from 'react-styled-flex';
-import { formatDate } from '../common/format-date';
+import { formatTime } from '../common/format-time';
 import { Button, ButtonContainer, Table } from '../common/styled';
 import { useRenderCount } from '../common/useRenderCount';
 
 export const Batching = () => {
   const [boolean, setBoolean] = useState(true);
   const [number, setNumber] = useState(0);
-  const [date, setDate] = useState(() => Date.now());
+  const [time, setTime] = useState(() => Date.now());
   const [elements, setElements] = useState<JSX.Element[]>([]);
-  const renderCount = useRenderCount([boolean, number, date]);
+  const renderCount = useRenderCount([boolean, number, time]);
 
   const handleClick = () => {
     setBoolean(!boolean);
     setNumber(number + 1);
-    setDate(Date.now());
+    setTime(Date.now());
   };
 
   const handleTimeoutClick = () => {
     setTimeout(() => {
       setBoolean(!boolean);
       setNumber(number + 1);
-      setDate(Date.now());
+      setTime(Date.now());
     }, 0);
   };
 
   useEffect(() => {
     setElements((prevElements) => [
       ...prevElements,
-      <tr key={`${date}_${number}_${boolean}`}>
+      <tr key={`${time}_${number}_${boolean}`}>
         <td>{renderCount}</td>
         <td>{boolean.toString()}</td>
         <td>{number}</td>
-        <td>{formatDate(date)}</td>
+        <td>{formatTime(time)}</td>
       </tr>,
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [boolean, number, date]);
+  }, [boolean, number, time]);
 
   return (
     <FlexBox column gap={'1rem'}>
@@ -54,7 +54,7 @@ export const Batching = () => {
             <th>Render Count</th>
             <th>Boolean</th>
             <th>Number</th>
-            <th>Date</th>
+            <th>Time</th>
           </tr>
         </thead>
         <tbody>{elements}</tbody>
