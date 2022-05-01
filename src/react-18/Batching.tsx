@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { FlexBox } from 'react-styled-flex';
 import { formatDate } from '../common/format-date';
-import { Button, Table } from '../common/styled';
+import { Button, ButtonContainer, Table } from '../common/styled';
 import { useRenderCount } from '../common/useRenderCount';
 
 export const Batching = () => {
@@ -47,11 +47,17 @@ export const Batching = () => {
 
   return (
     <FlexBox column gap={'1rem'}>
-      <FlexBox gap={'1rem'}>
-        <Button onClick={handleClick}>setState in event handler</Button>
-        <Button onClick={handleTimeoutClick}>setState in setTimeout</Button>
-        <Button onClick={handleFlushSyncClick}>setState in flushSync</Button>
-      </FlexBox>
+      <ButtonContainer gap={'0.5rem'}>
+        <Button onClick={handleClick}>
+          Update state in <strong>event handler</strong>
+        </Button>
+        <Button onClick={handleTimeoutClick}>
+          Update state in <strong>setTimeout</strong>
+        </Button>
+        <Button onClick={handleFlushSyncClick}>
+          Update state in <strong>flushSync</strong>
+        </Button>
+      </ButtonContainer>
       <Table cellSpacing={0}>
         <thead>
           <tr>

@@ -35,6 +35,12 @@ export const Button = styled.button`
   }
 `;
 
+export const ButtonContainer = styled(FlexBox)`
+  ${(props) => props.theme.media.mobile} {
+    flex-direction: column;
+  }
+`;
+
 export const StyledInput = styled.input`
   padding: 0.5rem;
 `;
