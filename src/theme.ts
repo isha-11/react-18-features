@@ -4,7 +4,9 @@ const primary = '#61dafb';
 const secondary = '#20232a';
 
 export const theme = {
-  breakpoint: '64rem',
+  media: {
+    mobile: '@media (max-width: 64rem)',
+  },
   color: {
     primary,
     primary15: darken(0.15, primary),
@@ -19,5 +21,11 @@ export const theme = {
 
     shadow: '#ccc',
     border: secondary,
+  },
+  padding: {
+    app: {
+      mobile: '1.5rem',
+      desktop: '3rem',
+    },
   },
 };

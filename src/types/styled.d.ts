@@ -5,6 +5,9 @@ type RequiredCSSProperties = Required<CSSProperties>;
 declare module 'styled-components' {
   export interface DefaultTheme {
     breakpoint: RequiredCSSProperties['maxWidth'];
+    media: {
+      mobile: string;
+    };
     color: {
       primary: RequiredCSSProperties['color'];
       primary15: RequiredCSSProperties['color'];
@@ -18,6 +21,12 @@ declare module 'styled-components' {
       scrollbar: {
         track: RequiredCSSProperties['color'];
         thumb: RequiredCSSProperties['color'];
+      };
+    };
+    padding: {
+      app: {
+        mobile: RequiredCSSProperties['padding'];
+        desktop: RequiredCSSProperties['padding'];
       };
     };
   }

@@ -33,12 +33,15 @@ export const Demo = () => {
 const Page = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
-  padding: 0 3rem 3rem 3rem;
 
   height: 100%;
-  @media (max-width: ${(props) => props.theme.breakpoint}) {
+  padding: ${(props) => props.theme.padding.app.desktop};
+  padding-top: 0;
+
+  ${(props) => props.theme.media.mobile} {
     height: 200%;
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding: ${(props) => props.theme.padding.app.mobile};
+    padding-top: 0;
 
     [aria-label='content'] {
       flex-direction: column;
