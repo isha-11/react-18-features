@@ -3,9 +3,11 @@ import { FlexBox } from 'react-styled-flex';
 import { ReactComponent as Logo } from './react-logo.svg';
 
 export const DemoApp = styled.main`
-  padding: 0.005rem 3rem;
+  padding: ${(props) => props.theme.padding.app.desktop};
+  padding-top: 0.005rem;
   ${(props) => props.theme.media.mobile} {
-    padding: 0.005rem 1.5rem;
+    padding: ${(props) => props.theme.padding.app.mobile};
+    padding-top: 0.005rem;
   }
 `;
 
