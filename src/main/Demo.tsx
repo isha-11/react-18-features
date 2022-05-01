@@ -15,7 +15,7 @@ export const Demo = () => {
         box
         center
         flex={1}
-        gap={'3rem'}
+        gap={'2rem'}
         height={'100%'}
         aria-label={'content'}
       >
