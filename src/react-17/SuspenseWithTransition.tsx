@@ -1,7 +1,5 @@
 import { ChangeEvent, Suspense, useState } from 'react';
-import { QueryClientProvider } from 'react-query';
 import { FlexBox } from 'react-styled-flex';
-import { queryClient } from '../common/queryClient';
 import { Flag, Item, List, Spinner, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
 
@@ -13,25 +11,16 @@ export const SuspenseWithTransition = () => {
   };
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <FlexBox as='section' column gap={'1rem'}>
-        <StyledInput type='text' value={query} onChange={handleChange} />
-        <Suspense fallback={<Spinner />}>
-          <Result query={query} />
-        </Suspense>
-      </FlexBox>
-    </QueryClientProvider>
+    <FlexBox as='section' column gap={'1rem'}>
+      <StyledInput type='text' value={query} onChange={handleChange} />
+      <Suspense fallback={<Spinner />}>
+        <Result query={query} />
+      </Suspense>
+    </FlexBox>
   );
 };
 
 const Result = ({ query }: { query: string }) => {
-  // const { data: countries } = useQuery(query, () =>
-  //   fetcher(
-  //     query
-  //       ? `https://restcountries.com/v3.1/name/${query}`
-  //       : 'https://restcountries.com/v3.1/all',
-  //   ),
-  // );
   const countries: Country[] = useFetch(
     query
       ? `https://restcountries.com/v3.1/name/${query}`
