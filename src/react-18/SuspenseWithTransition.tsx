@@ -1,4 +1,4 @@
-import { ChangeEvent, Suspense, useState, useTransition } from 'react';
+import { ChangeEvent, memo, Suspense, useState, useTransition } from 'react';
 import { FlexBox } from 'react-styled-flex';
 import { Flag, Item, List, Spinner, StyledInput } from '../common/styled';
 import { useFetch } from '../common/useFetch';
@@ -25,7 +25,7 @@ export const SuspenseWithTransition = () => {
   );
 };
 
-const Result = ({ query }: { query: string }) => {
+const Result = memo(({ query }: { query: string }) => {
   const countries: Country[] = useFetch(
     query
       ? `https://restcountries.com/v3.1/name/${query}`
@@ -44,7 +44,7 @@ const Result = ({ query }: { query: string }) => {
         ))}
     </List>
   );
-};
+});
 
 interface Country {
   name: {

@@ -14,7 +14,7 @@ const fetchData = (url: string) => {
     if (promise) throw promise;
 
     /* if promise is resolved, then remove from map */
-    //map.delete(url);
+    map.delete(url);
     if (error) throw error;
     else return data;
   }
